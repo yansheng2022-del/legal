@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>法律行业情报日报 - 2026-07-16</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { 
+    background: #f0f2f5; 
+    color: #1a1a2e; 
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+    line-height: 1.6;
+    padding: 20px;
+}
+.container { max-width: 1200px; margin: 0 auto; }
+
+/* 头部 */
+.header {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+    color: #fff;
+    border-radius: 16px;
+    padding: 30px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+.header h1 { font-size: 28px; font-weight: 800; margin-bottom: 8px; }
+.header .sub { color: #94a3b8; font-size: 14px; }
+.header .sub span { color: #60a5fa; font-weight: bold; }
+.header .stats {
+    display: flex;
+    gap: 30px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+.header .stat {
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(96,165,250,0.2);
+    border-radius: 12px;
+    padding: 12px 20px;
+    text-align: center;
+    min-width: 120px;
+}
+.header .stat .num { font-size: 24px; font-weight: 800; color: #60a5fa; }
+.header .stat .label { font-size: 12px; color: #94a3b8; margin-top: 4px; }
+
+/* 板块 */
+.section {
+    background: #fff;
+    border-radius: 12px;
+    padding: 24px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+.section-title {
+    font-size: 20px;
+    font-weight: 700;
+    color: #1a1a2e;
+    margin-bottom: 16px;
+    padding-bottom: 12px;
+    border-bottom: 3px solid #2563eb;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.section-title .badge {
+    background: #2563eb;
+    color: #fff;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 2px 10px;
+    border-radius: 20px;
+}
+
+/* 新闻条目 */
+.news-item {
+    padding: 12px 0;
+    border-bottom: 1px solid #e2e8f0;
+}
+.news-item:last-child { border-bottom: none; }
+.news-title {
+    font-size: 15px;
+    font-weight: 600;
+    color: #1a1a2e;
+    margin: 6px 0;
+}
+.news-summary {
+    font-size: 13px;
+    color: #64748b;
+    line-height: 1.5;
+}
+
+/* 标签 */
+.imp-tag {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-right: 6px;
+}
+.imp-high { background: #fee2e2; color: #dc2626; }
+.imp-medium { background: #fef3c7; color: #d97706; }
+.imp-low { background: #f1f5f9; color: #64748b; }
+
+.cat-tag {
+    display: inline-block;
+    font-size: 11px;
+    background: #dbeafe;
+    color: #2563eb;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-right: 6px;
+}
+.source-tag { font-size: 12px; color: #3b82f6; font-weight: 600; margin-right: 8px; }
+.date-tag { font-size: 11px; color: #94a3b8; }
+
+/* 招聘表格 */
+.hiring-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+    margin-top: 12px;
+}
+.hiring-table th {
+    background: #1e3a5f;
+    color: #fff;
+    padding: 10px;
+    text-align: left;
+    font-weight: 600;
+}
+.hiring-table td {
+    padding: 10px;
+    border-bottom: 1px solid #e2e8f0;
+}
+.hiring-table tr:nth-child(even) { background: #f8fafc; }
+.hiring-table .firm-name { font-weight: 600; color: #1e3a5f; }
+.hiring-table .salary { color: #dc2626; font-weight: 600; }
+.hiring-table .trend-up { color: #16a34a; font-weight: 600; }
+.hiring-table .trend-down { color: #dc2626; font-weight: 600; }
+.hiring-table .trend-flat { color: #64748b; }
+
+/* 社媒对比表 */
+.social-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+    margin-top: 12px;
+}
+.social-table th {
+    background: #0f3460;
+    color: #fff;
+    padding: 10px;
+    text-align: left;
+}
+.social-table td {
+    padding: 10px;
+    border-bottom: 1px solid #e2e8f0;
+    vertical-align: top;
+}
+.social-table tr:nth-child(even) { background: #f8fafc; }
+.social-table .live-yes { color: #16a34a; font-weight: 600; }
+.social-table .live-no { color: #94a3b8; }
+.social-table .budget-high { color: #dc2626; font-weight: 600; }
+.social-table .budget-medium { color: #d97706; }
+.social-table .budget-low { color: #64748b; }
+.social-table .firm-name { font-weight: 600; color: #1e3a5f; }
+
+/* 社媒扫描总览卡片 */
+.social-overview {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 12px;
+    margin: 12px 0;
+}
+.social-overview .stat-card {
+    background: linear-gradient(135deg, #eff6ff, #dbeafe);
+    border: 1px solid #93c5fd;
+    border-radius: 8px;
+    padding: 14px;
+    text-align: center;
+}
+.social-overview .stat-card .num {
+    font-size: 28px;
+    font-weight: 700;
+    color: #1e3a5f;
+}
+.social-overview .stat-card .label {
+    font-size: 12px;
+    color: #475569;
+    margin-top: 4px;
+}
+.social-overview .stat-card.highlight {
+    background: linear-gradient(135deg, #fef3c7, #fde68a);
+    border-color: #f59e0b;
+}
+.social-overview .stat-card.highlight .num {
+    color: #92400e;
+}
+
+/* 社媒IP卡片 */
+.influencer-card {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 14px;
+    margin: 8px 0;
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+}
+.influencer-card .avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #3b82f6, #1e3a5f);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    font-weight: 700;
+    flex-shrink: 0;
+}
+.influencer-card .info {
+    flex: 1;
+}
+.influencer-card .name {
+    font-weight: 600;
+    color: #1e3a5f;
+    font-size: 14px;
+}
+.influencer-card .meta {
+    font-size: 12px;
+    color: #64748b;
+    margin: 2px 0;
+}
+.influencer-card .followers {
+    display: inline-block;
+    background: #dbeafe;
+    color: #1e40af;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 600;
+    margin-right: 6px;
+}
+.influencer-card .platform-tag {
+    display: inline-block;
+    background: #f1f5f9;
+    color: #475569;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 11px;
+    margin-right: 4px;
+}
+.influencer-card .threat-high {
+    color: #dc2626;
+    font-weight: 600;
+    font-size: 11px;
+}
+.influencer-card .threat-medium {
+    color: #d97706;
+    font-weight: 600;
+    font-size: 11px;
+}
+.influencer-card .threat-low {
+    color: #64748b;
+    font-size: 11px;
+}
+.influencer-card.industry {
+    border-left: 3px solid #f59e0b;
+}
+
+/* 爆款视频追踪表 */
+.viral-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 8px 0 12px;
+    font-size: 13px;
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+}
+.viral-table th {
+    background: linear-gradient(135deg, #7c2d12, #dc2626);
+    color: #fff;
+    padding: 10px 8px;
+    text-align: left;
+    font-size: 12px;
+    font-weight: 600;
+}
+.viral-table td {
+    padding: 8px;
+    border-bottom: 1px solid #f1f5f9;
+    vertical-align: top;
+}
+.viral-table tr:nth-child(even) {
+    background: #fef2f2;
+}
+.viral-table tr:hover {
+    background: #fee2e2;
+}
+.influencer-card.competitor {
+    border-left: 3px solid #3b82f6;
+}
+
+/* 提示框 */
+.alert {
+    background: #fef3c7;
+    border-left: 4px solid #f59e0b;
+    padding: 12px 16px;
+    border-radius: 8px;
+    margin: 12px 0;
+    font-size: 13px;
+    color: #92400e;
+}
+.alert.danger {
+    background: #fee2e2;
+    border-left-color: #dc2626;
+    color: #991b1b;
+}
+.alert.success {
+    background: #dcfce7;
+    border-left-color: #16a34a;
+    color: #166534;
+}
+.alert.info {
+    background: #dbeafe;
+    border-left-color: #2563eb;
+    color: #1e40af;
+}
+
+/* 空状态 */
+.empty {
+    text-align: center;
+    color: #94a3b8;
+    padding: 20px;
+    font-size: 14px;
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    color: #64748b;
+    font-size: 12px;
+    padding: 20px;
+    margin-top: 20px;
+}
+.footer a { color: #2563eb; text-decoration: none; }
+
+/* 竞争对手卡片 */
+.competitor-card {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    padding: 16px;
+    margin-bottom: 12px;
+}
+.competitor-card .firm-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+.competitor-card .firm-name { font-size: 16px; font-weight: 700; color: #1e3a5f; }
+.competitor-card .firm-meta { font-size: 12px; color: #64748b; }
+.competitor-card .firm-stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    margin-top: 10px;
+}
+.competitor-card .stat-item {
+    text-align: center;
+    padding: 8px;
+    background: #fff;
+    border-radius: 8px;
+    border: 1px solid #e2e8f0;
+}
+.competitor-card .stat-item .val { font-size: 16px; font-weight: 700; color: #2563eb; }
+.competitor-card .stat-item .lbl { font-size: 11px; color: #94a3b8; }
+
+/* 响应式 */
+@media (max-width: 768px) {
+    .header .stats { flex-direction: column; }
+    .competitor-card .firm-stats { grid-template-columns: repeat(2, 1fr); }
+}
+</style>
+</head>
+<body>
+<div class="container">
+
+<!-- 头部 -->
+<div class="header">
+    <h1>⚖️ 法律行业情报日报</h1>
+    <div class="sub">
+        湖北道博律师事务所 · 竞争情报监控 | 
+        日期：<span>2026-07-16</span> | 
+        采集时间：<span>09:06</span> | 
+        监控律所：<span>10家</span>
+    </div>
+    <div class="stats">
+        <div class="stat">
+            <div class="num">8</div>
+            <div class="label">政策法规</div>
+        </div>
+        <div class="stat">
+            <div class="num">7</div>
+            <div class="label">重点判例</div>
+        </div>
+        <div class="stat">
+            <div class="num">60</div>
+            <div class="label">招聘动态</div>
+        </div>
+        <div class="stat">
+            <div class="num">10</div>
+            <div class="label">社媒监控</div>
+        </div>
+        <div class="stat">
+            <div class="num">9</div>
+            <div class="label">车祸监控</div>
+        </div>
+    </div>
+</div>
+
+<!-- 1. 政策法规 -->
+<div class="section">
+    <div class="section-title">
+        🏛️ 国家政策与法律法规变化
+        <span class="badge">8条</span>
+    </div>
+    <div class="news-item">
+                <span class="imp-tag imp-high">🔴 重要</span>
+                <span class="cat-tag">侵权/道交</span>
+                <span class="source-tag">最高人民法院</span>
+                <span class="date-tag">2026-05-06</span>
+                <div class="news-title">最高法发布《关于审理道路交通事故损害赔偿案件适用法律若干问题的解释(二)》(法释〔2026〕9号)</div>
+                <div class="news-summary">共12条，2026年6月30日起施行。重点解决五大问题：①机动车租赁借用责任承担（所有人有过错范围内共同赔偿）②「开门杀」保险理赔（乘车人责任属机动车一方责任，交强险需赔付）③「好意同乘」过错考量（交警全责/主责≠当然构成重大过失）④超龄劳动者误工费支持（有证据证明有误工损失即应支持）⑤合并审理杜绝程序空转（社保追偿、路救基金追偿可合并审理）。全国机动车保有量4.69亿辆，道交纠纷是数量最多的民事案件类型之一。</div>
+            </div>
+<div class="news-item">
+                <span class="imp-tag imp-high">🔴 重要</span>
+                <span class="cat-tag">知识产权</span>
+                <span class="source-tag">全国人大常委会·国家知识产权局</span>
+                <span class="date-tag">2026-06-26</span>
+                <div class="news-title">商标法全面修订通过（1983年施行以来首次），2027年1月1日施行</div>
+                <div class="news-summary">6月26日十四届全国人大常委会第二十三次会议表决通过。从8章73条增至9章87条。核心变化：①严打「心机商标」（误导公众使用注册商标最高罚25万+撤销商标）②遏制恶意注册（「不以使用为目的且明显超出正常经营需要」不予注册）③驰名商标跨类保护升级（不再区分注册与否）④法定赔偿上限提至500万+1-5倍惩罚性赔偿⑤异议期3个月缩至2个月⑥打击恶意诉讼（碰瓷式维权可处罚+赔偿）⑦商标代理机构及从业人员监管加强。</div>
+            </div>
+<div class="news-item">
+                <span class="imp-tag imp-medium">🟡 关注</span>
+                <span class="cat-tag">资源/行政</span>
+                <span class="source-tag">国务院·司法部·自然资源部</span>
+                <span class="date-tag">2026-05-15</span>
+                <div class="news-title">《矿产资源法实施条例》公布(国务院令第839号)，6月15日施行</div>
+                <div class="news-summary">5月15日国务院令第839号公布，6月15日起施行。细化2024年新修订矿产资源法的配套制度：完善矿业权设立方式（优先招标出让+协议出让情形）、加强矿业权出让工作（同级管理）、健全矿区生态修复制度、战略性矿产资源探产供储销全链条统筹。整合原矿产资源法多部配套行政法规，构建系统完整的矿产资源法律制度体系。</div>
+            </div>
+<div class="news-item">
+                <span class="imp-tag imp-medium">🟡 关注</span>
+                <span class="cat-tag">行政/立法</span>
+                <span class="source-tag">国务院·司法部</span>
+                <span class="date-tag">2026-05-15</span>
+                <div class="news-title">《行政法规制定程序条例》修订公布(国务院令第838号)，7月1日施行</div>
+                <div class="news-summary">5月15日公布，7月1日起施行。首次将「两个更加注重」写入行政法规（注重立法与改革发展稳定相协同、注重保障促进社会公平正义）。核心变化：强化立法计划统筹（立项-统筹-落实全链条）、健全起草制度（全过程人民民主+评估论证）、加强政府立法审查（合宪性审查可征求全国人大常委会意见）、适应改革需要（暂时调整/停止适用行政法规的程序）。</div>
+            </div>
+<div class="news-item">
+                <span class="imp-tag imp-medium">🟡 关注</span>
+                <span class="cat-tag">行政</span>
+                <span class="source-tag">国务院</span>
+                <span class="date-tag">2026-04-29</span>
+                <div class="news-title">《中华人民共和国行政复议法实施条例》施行(国务院令第836号)，7月1日起施行</div>
+                <div class="news-summary">4月29日公布，7月1日起施行。完善行政复议法配套制度，推动行政复议工作高质量发展。细化行政复议的受理、审理、决定等程序规定，强化行政复议化解行政争议的主渠道作用。</div>
+            </div>
+<div class="news-item">
+                <span class="imp-tag imp-high">🔴 重要</span>
+                <span class="cat-tag">金融</span>
+                <span class="source-tag">司法部·央行·金融监管总局·证监会</span>
+                <span class="date-tag">2026-07</span>
+                <div class="news-title">《金融法(草案)》公开征求意见——金融领域基础性立法</div>
+                <div class="news-summary">司法部联合中国人民银行、金融监管总局、中国证监会、国家外汇局就《中华人民共和国金融法(草案)》公开征求意见。这是金融领域基础性法律立法的重要进展，涉及金融监管体制、金融机构治理、金融消费者保护等核心制度。</div>
+            </div>
+<div class="news-item">
+                <span class="imp-tag imp-medium">🟡 关注</span>
+                <span class="cat-tag">刑事执行</span>
+                <span class="source-tag">全国人大常委会</span>
+                <span class="date-tag">2026-04-30</span>
+                <div class="news-title">《中华人民共和国监狱法》修订通过，11月1日施行——30多年来首次全面修订</div>
+                <div class="news-summary">4月30日十四届全国人大常委会第二十二次会议表决通过。现行监狱法施行30多年来首次全面修订，标志着监狱工作全面迈入制度化、规范化、法治化新阶段。</div>
+            </div>
+<div class="news-item">
+                <span class="imp-tag imp-medium">🟡 关注</span>
+                <span class="cat-tag">民商事</span>
+                <span class="source-tag">司法部</span>
+                <span class="date-tag">2026-07</span>
+                <div class="news-title">《商事调解条例(公开征求意见稿)》公开征求意见</div>
+                <div class="news-summary">司法部就《中华人民共和国商事调解条例(公开征求意见稿)》公开征求意见。旨在规范商事调解活动，完善多元化纠纷解决机制，为商事主体提供高效便捷的争议解决途径。</div>
+            </div>
+
+</div>
+
+<!-- 2. 重点判例 -->
+<div class="section">
+    <div class="section-title">
+        ⚖️ 重点判例案件解读
+        <span class="badge">7条</span>
+    </div>
+    <div class="news-item">
+                <span class="imp-tag imp-high">🔴 重大</span>
+                <span class="cat-tag">知识产权/技术秘密</span>
+                <span class="source-tag">最高人民法院</span>
+                <span class="date-tag">2026-02-28</span>
+                <div class="news-title">指导性案例273号：浙江吉某诉威某汽车制造温州有限公司等侵害技术秘密纠纷案</div>
+                <div class="news-summary">技术人员跳槽引发的技术秘密侵权案。裁判要点：被诉侵权人招揽其他企业人才，形成获取技术秘密的渠道或机会，并在明显短于独立研发所需合理时间内即生产出相关产品的，可推定实施了侵害技术秘密行为。细化停止侵害具体要求（停止制造/销售/处分专利/销毁载体），强化核心技术保护。第49批指导性案例（2026年2月28日发布，科技创新知识产权保护专题）。</div>
+            </div>
+<div class="news-item">
+                <span class="imp-tag imp-high">🔴 重大</span>
+                <span class="cat-tag">知识产权/专利</span>
+                <span class="source-tag">最高人民法院</span>
+                <span class="date-tag">2026-02-28</span>
+                <div class="news-title">指导性案例274号：青岛青某重工诉青岛晨某机械侵害发明专利权纠纷案——许诺销售侵权责任</div>
+                <div class="news-summary">明确许诺销售侵权行为的民事责任不以发生实际销售为前提。实施许诺销售（广告/陈列/展销等方式作出销售意思表示）即构成侵权，应承担停止侵害+赔偿损失+维权合理开支。赔偿数额无法按专利权人损失/侵权人获益/许可费确定的，可在法定赔偿范围内合理确定。</div>
+            </div>
+<div class="news-item">
+                <span class="imp-tag imp-high">🔴 重大</span>
+                <span class="cat-tag">知识产权/专利</span>
+                <span class="source-tag">最高人民法院</span>
+                <span class="date-tag">2026-02-28</span>
+                <div class="news-title">指导性案例276号：化学/生物领域专利创造性判断——'有无尝试必要'标准</div>
+                <div class="news-summary">细化化学、生物领域专利「三步法」创造性判断规则。明确本领域普通技术人员是否具有合理成功预期，应以是否认为有'尝试的必要'为标准，不要求具有'成功的确定性'或'成功的高度盖然性'。契合科研创新规律，降低创新保护门槛。</div>
+            </div>
+<div class="news-item">
+                <span class="imp-tag imp-high">🔴 重大</span>
+                <span class="cat-tag">知识产权/恶意诉讼</span>
+                <span class="source-tag">最高人民法院</span>
+                <span class="date-tag">2026-02-28</span>
+                <div class="news-title">指导性案例278号：福建恒某科技诉泉州日某流量计恶意诉讼案——知识产权恶意诉讼侵权责任</div>
+                <div class="news-summary">向知识产权恶意诉讼亮剑。明知自己的主张明显缺乏权利基础或事实根据，仍对他人提起专利侵权诉讼损害他人权益的，属于滥用诉讼权利的恶意诉讼行为，应依法承担侵权责任。彰显维护诉讼诚信、净化市场环境的鲜明立场。</div>
+            </div>
+<div class="news-item">
+                <span class="imp-tag imp-high">🔴 重大</span>
+                <span class="cat-tag">知识产权/软件著作权</span>
+                <span class="source-tag">最高人民法院</span>
+                <span class="date-tag">2026-02-28</span>
+                <div class="news-title">指导性案例279号：西某工业软件诉广州沃某模具计算机软件著作权侵权案——破解'举证难'</div>
+                <div class="news-summary">破解软件侵权'举证难'：权利人证明二者名称、版本号、权利人信息等特有信息相同或软件界面设计高度近似的，无需进行软件代码比对即可认定实质性相似（被诉侵权人有相反证据除外）。对妨害证据保全的被诉侵权人，法院可依法作出不利事实推定。</div>
+            </div>
+<div class="news-item">
+                <span class="imp-tag imp-medium">🟡 关注</span>
+                <span class="cat-tag">环境资源/生物多样性</span>
+                <span class="source-tag">最高人民法院</span>
+                <span class="date-tag">2026-07-15</span>
+                <div class="news-title">最高法发布依法保护生物多样性典型案例（2026年7月15日发布）</div>
+                <div class="news-summary">5件典型案例体现三大导向：①雪豹案——猎杀5只雪豹剥皮藏匿获刑12年（生态系统保护）②野牦牛案——非法猎捕三江源野牦牛幼犊获刑5.5-6年（遗传资源保护）③东方白鹳案——猎杀2只国一级保护鸟类4人获刑4-5.3年④野生石斛案——劳务代偿修复模式（修复优先）⑤马缨丹案——外来入侵物种防控（行政公益诉讼）。</div>
+            </div>
+<div class="news-item">
+                <span class="imp-tag imp-medium">🟡 关注</span>
+                <span class="cat-tag">诉讼程序</span>
+                <span class="source-tag">最高人民法院</span>
+                <span class="date-tag">2026-07-08</span>
+                <div class="news-title">最高法发布第四批示范文本应用典型案例（2026年7月8日发布）</div>
+                <div class="news-summary">5件案例覆盖劳动争议、买卖合同、证券虚假陈述责任、信用卡纠纷及行政赔偿。示范文本将复杂法律文书转化为'填空式'模板。证券虚假陈述案中，杭州中院指导300余名中小投资者通过勾选式起诉状快速提交，最终达成调解协议并履行完毕。2026年以来七成以上当事人和律师立案时主动提交要素式起诉状，较去年增加18.82个百分点。</div>
+            </div>
+
+</div>
+
+<!-- 3. 竞品招聘 -->
+<div class="section">
+    <div class="section-title">
+        👥 竞争对手招聘监控
+        <span class="badge">湖北10家律所</span>
+    </div>
+    <div style="background:linear-gradient(135deg,#1e3a5f,#2563eb);border-radius:12px;padding:20px;margin-bottom:16px;color:#fff;"><div style="font-size:15px;font-weight:700;margin-bottom:12px;">📊 招聘数据总结</div><div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:12px;"><div style="background:rgba(255,255,255,0.1);border-radius:8px;padding:10px;text-align:center;"><div style="font-size:24px;font-weight:800;color:#60a5fa;">60</div><div style="font-size:11px;color:#94a3b8;">总岗位数</div></div><div style="background:rgba(255,255,255,0.1);border-radius:8px;padding:10px;text-align:center;"><div style="font-size:24px;font-weight:800;color:#60a5fa;">39</div><div style="font-size:11px;color:#94a3b8;">涉及律所</div></div><div style="background:rgba(255,255,255,0.1);border-radius:8px;padding:10px;text-align:center;"><div style="font-size:24px;font-weight:800;color:#60a5fa;">3</div><div style="font-size:11px;color:#94a3b8;">采集平台</div></div><div style="background:rgba(255,255,255,0.1);border-radius:8px;padding:10px;text-align:center;"><div style="font-size:24px;font-weight:800;color:#fbbf24;">12000</div><div style="font-size:11px;color:#94a3b8;">薪资中位数(元)</div></div></div><div style="margin-top:10px;font-size:13px;color:#bfdbfe;">💰 薪资范围：<strong>2000-480000元/月</strong> · 均价<strong>20792元</strong> · 有效样本<strong>59</strong>条</div></div><div style="margin-bottom:16px;"><div style="font-size:14px;font-weight:700;color:#1e3a5f;margin-bottom:8px;">📋 岗位类别分布</div><table class="hiring-table"><tr><th>岗位类别</th><th>岗位数</th><th>占比</th><th>薪资范围(元/月)</th><th>中位数</th><th>均价</th></tr><tr><td class="firm-name">授薪律师</td><td>35</td><td>58.3%</td><td style="color:#dc2626;">4000-480000</td><td><strong>12500</strong></td><td>23871</td></tr><tr><td class="firm-name">专业领域</td><td>10</td><td>16.7%</td><td style="color:#dc2626;">6000-150000</td><td><strong>12750</strong></td><td>25700</td></tr><tr><td class="firm-name">市场/案源</td><td>5</td><td>8.3%</td><td style="color:#dc2626;">6000-20000</td><td><strong>11500</strong></td><td>12400</td></tr><tr><td class="firm-name">律师助理</td><td>4</td><td>6.7%</td><td style="color:#dc2626;">2000-10000</td><td><strong>6500</strong></td><td>5875</td></tr><tr><td class="firm-name">合伙人</td><td>3</td><td>5.0%</td><td style="color:#dc2626;">9000-20000</td><td><strong>11000</strong></td><td>13000</td></tr><tr><td class="firm-name">实习律师</td><td>3</td><td>5.0%</td><td style="color:#dc2626;">2500-8000</td><td><strong>4875</strong></td><td>4875</td></tr></table></div><div style="display:flex;gap:16px;flex-wrap:wrap;margin-bottom:16px;"><div style="flex:1;min-width:280px;"><div style="font-size:14px;font-weight:700;color:#1e3a5f;margin-bottom:8px;">💰 薪资分段分布</div><table class="hiring-table"><tr><th>薪资区间</th><th>岗位数</th><th>占比</th></tr><tr><td>5K以下</td><td>2</td><td><div style="background:#dbeafe;border-radius:4px;height:16px;width:3%;min-width:30px;text-align:center;font-size:11px;line-height:16px;color:#2563eb;">3.3%</div></td></tr><tr><td>5K-10K</td><td>14</td><td><div style="background:#dbeafe;border-radius:4px;height:16px;width:23%;min-width:30px;text-align:center;font-size:11px;line-height:16px;color:#2563eb;">23.3%</div></td></tr><tr><td>10K-20K</td><td>32</td><td><div style="background:#dbeafe;border-radius:4px;height:16px;width:53%;min-width:30px;text-align:center;font-size:11px;line-height:16px;color:#2563eb;">53.3%</div></td></tr><tr><td>20K-50K</td><td>8</td><td><div style="background:#dbeafe;border-radius:4px;height:16px;width:13%;min-width:30px;text-align:center;font-size:11px;line-height:16px;color:#2563eb;">13.3%</div></td></tr><tr><td>50K以上</td><td>3</td><td><div style="background:#dbeafe;border-radius:4px;height:16px;width:5%;min-width:30px;text-align:center;font-size:11px;line-height:16px;color:#2563eb;">5.0%</div></td></tr><tr><td>面议/其他</td><td>1</td><td><div style="background:#dbeafe;border-radius:4px;height:16px;width:1%;min-width:30px;text-align:center;font-size:11px;line-height:16px;color:#2563eb;">1.7%</div></td></tr></table></div><div style="flex:1;min-width:280px;"><div style="font-size:14px;font-weight:700;color:#1e3a5f;margin-bottom:8px;">🏆 招聘活跃律所 TOP5</div><table class="hiring-table"><tr><th>排名</th><th>律所</th><th>在招岗位</th></tr><tr><td>🥇</td><td class="firm-name">北京市康达(武汉)律师事务所</td><td><strong>5</strong></td></tr><tr><td>🥈</td><td class="firm-name">湖北瀛楚律师事务所</td><td><strong>3</strong></td></tr><tr><td>🥉</td><td class="firm-name">湖北九凯律师事务所</td><td><strong>3</strong></td></tr><tr><td>4️⃣</td><td class="firm-name">湖北顺鹏律师事务所</td><td><strong>3</strong></td></tr><tr><td>5️⃣</td><td class="firm-name">顶呱呱科技</td><td><strong>3</strong></td></tr></table></div></div><div style="display:flex;gap:12px;flex-wrap:wrap;margin-bottom:16px;"><div style="background:#fef3c7;border-radius:10px;padding:12px 20px;text-align:center;min-width:140px;"><div style="font-size:22px;font-weight:800;color:#d97706;">18</div><div style="font-size:13px;font-weight:600;color:#d97706;">智联招聘</div><div style="font-size:11px;color:#64748b;margin-top:4px;">10家律所</div></div><div style="background:#dbeafe;border-radius:10px;padding:12px 20px;text-align:center;min-width:140px;"><div style="font-size:22px;font-weight:800;color:#2563eb;">4</div><div style="font-size:13px;font-weight:600;color:#2563eb;">BOSS直聘</div><div style="font-size:11px;color:#64748b;margin-top:4px;">4家律所</div></div><div style="background:#dcfce7;border-radius:10px;padding:12px 20px;text-align:center;min-width:140px;"><div style="font-size:22px;font-weight:800;color:#16a34a;">38</div><div style="font-size:13px;font-weight:600;color:#16a34a;">前程无忧</div><div style="font-size:11px;color:#64748b;margin-top:4px;">28家律所</div></div></div><div style="margin-top:16px;margin-bottom:8px;font-size:15px;font-weight:700;color:#2563eb;">📋 智联招聘（18个岗位）</div><table class="hiring-table"><tr><th>律所</th><th>岗位</th><th>类别</th><th>薪资</th><th>平台</th><th>发布日期</th></tr><tr><td class="firm-name">湖北瀛楚律师事务所</td><td>授薪律师(主播)</td><td>授薪律师</td><td class="salary">8K-16K</td><td>智联招聘</td><td>2026-07-16</td></tr><tr><td class="firm-name">湖北瀛楚律师事务所</td><td>律所合伙人/合伙人律师</td><td>合伙人</td><td class="salary">1万-1.2万</td><td>智联招聘</td><td>2026-07-16</td></tr><tr><td class="firm-name">湖北瀛楚律师事务所</td><td>独立提成律师(沌口分所)</td><td>授薪律师</td><td class="salary">1.2万-2.4万</td><td>智联招聘</td><td>2026-07-16</td></tr><tr><td class="firm-name">湖北维力律师事务所</td><td>授薪律师(知识产权/金融保险/民商事)</td><td>专业领域</td><td class="salary">7K-14K</td><td>智联招聘</td><td>2026-07-16</td></tr><tr><td class="firm-name">湖北九凯律师事务所</td><td>高提成独立律师</td><td>授薪律师</td><td class="salary">3万-6万</td><td>智联招聘</td><td>2026-07-16</td></tr><tr><td class="firm-name">湖北九凯律师事务所</td><td>执行律师</td><td>专业领域</td><td class="salary">1.5万-3万</td><td>智联招聘</td><td>2026-07-16</td></tr><tr><td class="firm-name">湖北九凯律师事务所</td><td>执业律师</td><td>授薪律师</td><td class="salary">1.5万-2.5万</td><td>智联招聘</td><td>2026-07-16</td></tr><tr><td class="firm-name">湖北顺鹏律师事务所</td><td>抖音直播律师(底薪1.2W+)</td><td>市场/案源</td><td class="salary">1.2万-2万</td><td>智联招聘</td><td>2026-07-16</td></tr><tr><td class="firm-name">湖北顺鹏律师事务所</td><td>执业律师</td><td>授薪律师</td><td class="salary">8K-16K</td><td>智联招聘</td><td>2026-07-16</td></tr><tr><td class="firm-name">湖北道博律师事务所</td><td>实习律师</td><td>实习律师</td><td class="salary">4K-8K</td><td>智联招聘</td><td>2026-07-16</td></tr><tr><td class="firm-name">湖北道博律师事务所</td><td>律师助理</td><td>律师助理</td><td class="salary">4K-8K</td><td>智联招聘</td><td>2026-07-16</td></tr><tr><td class="firm-name">北京德和衡(武汉)律师事务所</td><td>专职律师</td><td>授薪律师</td><td class="salary">7K-8K</td><td>智联招聘</td><td>2026-07-16</td></tr><tr><td class="firm-name">湖北上贤律师事务所</td><td>授薪律师(债权债务/破产清算)</td><td>专业领域</td><td class="salary">8K-12K·13薪</td><td>智联招聘</td><td>2026-07-16</td></tr><tr><td class="firm-name">湖北嘉顺律师事务所</td><td>律师助理</td><td>律师助理</td><td class="salary">2K-4K</td><td>智联招聘</td><td>2026-07-16</td></tr><tr><td class="firm-name">湖北嘉顺律师事务所</td><td>执业律师</td><td>授薪律师</td><td class="salary">5K-10K</td><td>智联招聘</td><td>2026-07-16</td></tr><tr><td class="firm-name">北京市康达(武汉)律师事务所</td><td>律师助理</td><td>律师助理</td><td class="salary">6K-8K</td><td>智联招聘</td><td>2026-07-16</td></tr><tr><td class="firm-name">北京市康达(武汉)律师事务所</td><td>专职律师</td><td>授薪律师</td><td class="salary">5K-10K</td><td>智联招聘</td><td>2026-07-16</td></tr><tr><td class="firm-name">广东知恒(武汉)律师事务所</td><td>专职律师</td><td>授薪律师</td><td class="salary">1万-2万</td><td>智联招聘</td><td>2026-07-16</td></tr></table><div style="margin-top:16px;margin-bottom:8px;font-size:15px;font-weight:700;color:#dc2626;">📋 BOSS直聘（4个岗位）</div><table class="hiring-table"><tr><th>律所</th><th>岗位</th><th>类别</th><th>薪资</th><th>福利/详情</th><th>发布日期</th></tr><tr><td class="firm-name">湖北和以胜律师事务所</td><td>授薪律师</td><td>授薪律师</td><td class="salary">15K</td><td style="font-size:12px;color:#64748b;">五险一金、年假、带薪陪伴父母假、带薪生日假、下午茶、免费午餐</td><td>2025-09</td></tr><tr><td class="firm-name">环源律所</td><td>授薪律师</td><td>授薪律师</td><td class="salary">8K-35K</td><td style="font-size:12px;color:#64748b;">社保、周末双休、节日福利、免管理费</td><td>2025-09</td></tr><tr><td class="firm-name">湖北楚驰律师事务所</td><td>事务所律师</td><td>授薪律师</td><td class="salary">10K-15K</td><td style="font-size:12px;color:#64748b;">团建聚餐下午茶</td><td>2025-09</td></tr><tr><td class="firm-name">湖北多能律师事务所</td><td>实习律师（接受应届生）</td><td>实习律师</td><td class="salary">面议</td><td style="font-size:12px;color:#64748b;">周末双休</td><td>2025-09</td></tr></table><div style="margin-top:16px;margin-bottom:8px;font-size:15px;font-weight:700;color:#16a34a;">📋 前程无忧（38个岗位）</div><table class="hiring-table"><tr><th>律所</th><th>岗位</th><th>类别</th><th>薪资</th><th>区域</th><th>经验</th><th>学历</th><th>发布日期</th></tr><tr><td class="firm-name">北京聚赋律师事务所</td><td>独立律师(特惠条件)</td><td>授薪律师</td><td class="salary">8千-1.5万</td><td style="font-size:12px;">武汉·江汉区</td><td style="font-size:12px;">3年及以上</td><td style="font-size:12px;">本科</td><td>2025-07</td></tr><tr><td class="firm-name">北京市大地(武汉)律师事务所</td><td>授薪律师</td><td>授薪律师</td><td class="salary">6千-1万</td><td style="font-size:12px;">武汉·武昌区</td><td style="font-size:12px;">2年及以上</td><td style="font-size:12px;">本科</td><td>2025-07</td></tr><tr><td class="firm-name">湖北维思德律师事务所</td><td>专职律师</td><td>授薪律师</td><td class="salary">1-1.5万</td><td style="font-size:12px;">武汉·武昌区</td><td style="font-size:12px;">2年</td><td style="font-size:12px;">本科</td><td>2025-07</td></tr><tr><td class="firm-name">北京市嘉源律师事务所</td><td>资本市场律师(武汉)</td><td>专业领域</td><td class="salary">9千-1.7万</td><td style="font-size:12px;">武汉·武昌区</td><td style="font-size:12px;">1-3年</td><td style="font-size:12px;">本科</td><td>2025-07</td></tr><tr><td class="firm-name">北京聚赋律师事务所</td><td>授薪律师</td><td>授薪律师</td><td class="salary">1-2万</td><td style="font-size:12px;">武汉·江汉区</td><td style="font-size:12px;">3年及以上</td><td style="font-size:12px;">本科</td><td>2025-07</td></tr><tr><td class="firm-name">湖北英楚律师事务所</td><td>授薪律师</td><td>授薪律师</td><td class="salary">4-7千·14薪</td><td style="font-size:12px;">武汉·东西湖区</td><td style="font-size:12px;">无需经验</td><td style="font-size:12px;">本科</td><td>2025-07</td></tr><tr><td class="firm-name">中兴华会计师事务所湖北分所</td><td>律师</td><td>专业领域</td><td class="salary">1-2万</td><td style="font-size:12px;">武汉·武昌区</td><td style="font-size:12px;">2年及以上</td><td style="font-size:12px;">本科</td><td>2025-07</td></tr><tr><td class="firm-name">湖北申简通律师事务所</td><td>专职律师</td><td>授薪律师</td><td class="salary">5千-1万</td><td style="font-size:12px;">武汉·武昌区</td><td style="font-size:12px;">1年及以上</td><td style="font-size:12px;">本科</td><td>2025-07</td></tr><tr><td class="firm-name">北京大成(武汉)律师事务所</td><td>执业律师</td><td>授薪律师</td><td class="salary">6千-1.2万</td><td style="font-size:12px;">武汉·江岸区</td><td style="font-size:12px;">2年</td><td style="font-size:12px;">本科</td><td>2025-07</td></tr><tr><td class="firm-name">湖北民本律师事务所</td><td>独立执业律师</td><td>授薪律师</td><td class="salary">2-4万·13薪</td><td style="font-size:12px;">武汉·硚口区</td><td style="font-size:12px;">3年及以上</td><td style="font-size:12px;">本科</td><td>2025-07</td></tr><tr><td class="firm-name">湖北振同律师事务所</td><td>授薪律师</td><td>授薪律师</td><td class="salary">8千-1.6万</td><td style="font-size:12px;">武汉·江汉区</td><td style="font-size:12px;">4年及以上</td><td style="font-size:12px;">硕士</td><td>2025-07</td></tr><tr><td class="firm-name">北京市康达(武汉)律师事务所</td><td>知识产权授薪律师</td><td>专业领域</td><td class="salary">6千-1万</td><td style="font-size:12px;">武汉·江岸区</td><td style="font-size:12px;">3年及以上</td><td style="font-size:12px;">本科</td><td>2025-07</td></tr><tr><td class="firm-name">湖北积威律师事务所</td><td>工伤人损-专职律师/合作律师</td><td>专业领域</td><td class="salary">10-15万/年</td><td style="font-size:12px;">武汉·硚口区</td><td style="font-size:12px;">1年</td><td style="font-size:12px;">本科</td><td>2025-07</td></tr><tr><td class="firm-name">湖北民本律师事务所</td><td>执业律师(金融方向年十万起)</td><td>专业领域</td><td class="salary">2-4万·13薪</td><td style="font-size:12px;">武汉·硚口区</td><td style="font-size:12px;">1-2年</td><td style="font-size:12px;">本科</td><td>2025-07</td></tr><tr><td class="firm-name">北京市炜衡(武汉)律师事务所</td><td>授薪律师</td><td>授薪律师</td><td class="salary">6-7千</td><td style="font-size:12px;">武汉</td><td style="font-size:12px;">2-3年</td><td style="font-size:12px;">本科</td><td>2025-07</td></tr><tr><td class="firm-name">湖北谦牧律师事务所</td><td>执业律师</td><td>授薪律师</td><td class="salary">1-2万</td><td style="font-size:12px;">武汉·武昌区</td><td style="font-size:12px;">3年及以上</td><td style="font-size:12px;">硕士</td><td>2025-07</td></tr><tr><td class="firm-name">湖北振同律师事务所</td><td>提成律师</td><td>授薪律师</td><td class="salary">1.5-3万</td><td style="font-size:12px;">武汉·江汉区</td><td style="font-size:12px;">3-4年</td><td style="font-size:12px;">本科</td><td>2025-07</td></tr><tr><td class="firm-name">湖北冠岳峰律师事务所</td><td>律所骨干律师</td><td>授薪律师</td><td class="salary">1-2万</td><td style="font-size:12px;">武汉·硚口区</td><td style="font-size:12px;">3年及以上</td><td style="font-size:12px;">本科</td><td>2025-07</td></tr><tr><td class="firm-name">湖北楚优律师事务所</td><td>执业律师/律所律师</td><td>授薪律师</td><td class="salary">2-3.5万</td><td style="font-size:12px;">武汉·武昌区</td><td style="font-size:12px;">2年及以上</td><td style="font-size:12px;">大专</td><td>2025-07</td></tr><tr><td class="firm-name">湖北谦牧律师事务所</td><td>授薪律师</td><td>授薪律师</td><td class="salary">4-6千</td><td style="font-size:12px;">武汉·武昌区</td><td style="font-size:12px;">1年及以上</td><td style="font-size:12px;">硕士</td><td>2025-07</td></tr><tr><td class="firm-name">湖北新材略律师事务所</td><td>执业律师/企业法务</td><td>专业领域</td><td class="salary">8千-1.3万</td><td style="font-size:12px;">武汉·武汉经济开发区</td><td style="font-size:12px;">2年及以上</td><td style="font-size:12px;">本科</td><td>2025-07</td></tr><tr><td class="firm-name">湖北冠岳峰律师事务所</td><td>执业律师(常驻黄石市区)</td><td>授薪律师</td><td class="salary">5千-1万</td><td style="font-size:12px;">武汉·硚口区</td><td style="font-size:12px;">3年及以上</td><td style="font-size:12px;">本科</td><td>2025-07</td></tr><tr><td class="firm-name">北京市康达(武汉)律师事务所</td><td>独立律师</td><td>授薪律师</td><td class="salary">1-2万</td><td style="font-size:12px;">武汉·江岸区</td><td style="font-size:12px;">3年及以上</td><td style="font-size:12px;">本科</td><td>2025-07</td></tr><tr><td class="firm-name">湖北垚鼎律师事务所</td><td>独立律师</td><td>授薪律师</td><td class="salary">7千-1.4万</td><td style="font-size:12px;">武汉·江汉区</td><td style="font-size:12px;">3年及以上</td><td style="font-size:12px;">本科</td><td>2025-07</td></tr><tr><td class="firm-name">北京市康达(武汉)律师事务所</td><td>执业律师</td><td>授薪律师</td><td class="salary">8千-1.2万</td><td style="font-size:12px;">武汉·江岸区</td><td style="font-size:12px;">无需经验</td><td style="font-size:12px;">本科</td><td>2025-07</td></tr><tr><td class="firm-name">顶呱呱科技</td><td>律所主任(合伙人)/案源充足</td><td>合伙人</td><td class="salary">1.5-2万</td><td style="font-size:12px;">武汉·武昌区</td><td style="font-size:12px;">3年及以上</td><td style="font-size:12px;">本科</td><td>2025-07</td></tr><tr><td class="firm-name">湖北宜为律师事务所</td><td>授薪律师</td><td>授薪律师</td><td class="salary">6千-1.2万</td><td style="font-size:12px;">武汉·江岸区</td><td style="font-size:12px;">1年及以上</td><td style="font-size:12px;">本科</td><td>2025-07</td></tr><tr><td class="firm-name">顶呱呱科技</td><td>提成律师/丰富案源</td><td>授薪律师</td><td class="salary">1-2万</td><td style="font-size:12px;">武汉·武昌区</td><td style="font-size:12px;">1年及以上</td><td style="font-size:12px;">本科</td><td>2025-07</td></tr><tr><td class="firm-name">顶呱呱科技</td><td>执行主任/律所/团队管理</td><td>合伙人</td><td class="salary">9千-1.2万</td><td style="font-size:12px;">武汉·武昌区</td><td style="font-size:12px;">5-10年</td><td style="font-size:12px;">本科</td><td>2025-07</td></tr><tr><td class="firm-name">湖北今天律师事务所</td><td>合伙团队实习律师</td><td>实习律师</td><td class="salary">2.5-5千</td><td style="font-size:12px;">武汉·武昌区</td><td style="font-size:12px;">1年及以上</td><td style="font-size:12px;">硕士</td><td>2025-06</td></tr><tr><td class="firm-name">湖北楚卓律师事务所</td><td>销售代表(双休+五险)</td><td>市场/案源</td><td class="salary">8千-1.5万</td><td style="font-size:12px;">武汉</td><td style="font-size:12px;">1-2年</td><td style="font-size:12px;">不限</td><td>2025-06</td></tr><tr><td class="firm-name">湖北易硕律师事务所</td><td>法律顾问(双休)</td><td>市场/案源</td><td class="salary">6千-1.2万</td><td style="font-size:12px;">武汉·硚口区</td><td style="font-size:12px;">1年及以上</td><td style="font-size:12px;">大专</td><td>2025-06</td></tr><tr><td class="firm-name">湖北顺鹏律师事务所</td><td>律所高新谈案顾问1-2w+</td><td>市场/案源</td><td class="salary">1-2万</td><td style="font-size:12px;">武汉</td><td style="font-size:12px;">2年及以上</td><td style="font-size:12px;">大专</td><td>2025-06</td></tr><tr><td class="firm-name">湖北盛楚律师事务所</td><td>律师助理</td><td>律师助理</td><td class="salary">5千-1万</td><td style="font-size:12px;">武汉·黄陂区</td><td style="font-size:12px;">1年及以上</td><td style="font-size:12px;">本科</td><td>2025-06</td></tr><tr><td class="firm-name">北京市炜衡(武汉)律师事务所</td><td>执业律师</td><td>授薪律师</td><td class="salary">24-48万/年</td><td style="font-size:12px;">武汉·江汉区</td><td style="font-size:12px;">3-4年</td><td style="font-size:12px;">本科</td><td>2025-06</td></tr><tr><td class="firm-name">北京市百瑞(武汉)律师事务所</td><td>法律咨询客服</td><td>市场/案源</td><td class="salary">8千-1.3万</td><td style="font-size:12px;">武汉·武昌区</td><td style="font-size:12px;">3年及以上</td><td style="font-size:12px;">大专</td><td>2025-06</td></tr><tr><td class="firm-name">湖北上贤律师事务所</td><td>接案律师</td><td>授薪律师</td><td class="salary">1-1.5万</td><td style="font-size:12px;">武汉·江汉区</td><td style="font-size:12px;">1年</td><td style="font-size:12px;">本科</td><td>2025-06</td></tr><tr><td class="firm-name">湖北赤云律师事务所</td><td>律所法律顾问-银行卡解冻部门</td><td>专业领域</td><td class="salary">1-1.5万</td><td style="font-size:12px;">武汉</td><td style="font-size:12px;">1年及以上</td><td style="font-size:12px;">不限</td><td>2025-06</td></tr></table>
+</div>
+
+<!-- 4. 竞品社媒 -->
+<div class="section">
+    <div class="section-title">
+        📱 竞品社媒监控（抖音/小红书/快手/视频号）
+        <span class="badge">10家律所 · 7家有IP</span>
+    </div>
+    <div class="social-overview"><div class="stat-card"><div class="num">10</div><div class="label">监控律所总数</div></div><div class="stat-card"><div class="num">7</div><div class="label">有社媒布局</div></div><div class="stat-card"><div class="num">3</div><div class="label">未布局社媒</div></div><div class="stat-card"><div class="num">8</div><div class="label">律师个人IP数</div></div><div class="stat-card highlight"><div class="num" style="font-size:16px;">郭庆梓律师（尊而光律所，抖音607.3万粉丝）</div><div class="label">头部IP</div></div></div><div style="font-size:11px;color:#94a3b8;margin:4px 0 8px;">📊 数据来源：WebSearch · 百度百科 · 律所官网 · 抖音/小红书公开数据 | 平台覆盖：抖音 · 小红书 · 快手 · 视频号 · 知乎 · 公众号</div><div class="alert info" style="margin:12px 0 6px;"><strong>🔥 武汉律师社媒头部IP（行业参考）</strong> — 非竞品列表内，但代表武汉法律社媒生态的最高水平</div><div class="influencer-card industry"><div class="avatar">郭</div><div class="info"><div class="name">郭庆梓律师 <span style="font-weight:400;color:#64748b;font-size:12px;">· 湖北尊而光律师事务所</span> <span class="threat-high">威胁度: 高 — 武汉本地法律流量被其高度集中</span></div><div class="meta"><span class="platform-tag">抖音 607.3万</span></div><div class="meta">🎯 内容方向: 婚姻家事/劳动纠纷/民商事  |  📺 直播: 每周日-周四 20:30 直播</div><div class="meta">📝 武汉法律博主绝对头部，粉丝量远超所有竞品律所总和</div></div></div><div class="influencer-card industry"><div class="avatar">刘</div><div class="info"><div class="name">刘丽莎律师 <span style="font-weight:400;color:#64748b;font-size:12px;">· 湖南大雍律师事务所（武汉运营）</span> <span class="threat-medium">威胁度: 中 — 跨地域IP但内容覆盖武汉</span></div><div class="meta"><span class="platform-tag">抖音 60万</span></div><div class="meta">🎯 内容方向: 婚姻家事/民商事  |  📺 直播: —</div><div class="meta">📝 武汉大学法学硕士，在武汉有较强影响力</div></div></div><div class="influencer-card industry"><div class="avatar">李</div><div class="info"><div class="name">李雪律师 <span style="font-weight:400;color:#64748b;font-size:12px;">· 湖北楚尚律师事务所</span> <span class="threat-high">威胁度: 低 — 体量小但垂直度高</span></div><div class="meta"><span class="platform-tag">抖音 2.9万</span><span class="platform-tag">小红书 —</span><span class="platform-tag">视频号 —</span></div><div class="meta">🎯 内容方向: 刑事辩护  |  📺 直播: —</div><div class="meta">📝 「武汉刑事李雪律师」全平台运营，受邀湖北广播电视台《长江云说法》</div></div></div><div class="influencer-card industry"><div class="avatar">周</div><div class="info"><div class="name">周俊律师 <span style="font-weight:400;color:#64748b;font-size:12px;">· 湖北西陵律师事务所（宜昌）</span> <span class="threat-low">威胁度: 低 — 宜昌地区，非武汉直接竞争</span></div><div class="meta"><span class="platform-tag">抖音 3.2万</span><span class="platform-tag">快手 1.2万</span></div><div class="meta">🎯 内容方向: 婚姻家庭/刑事/工伤赔偿  |  📺 直播: —</div><div class="meta">📝 「网红普法志愿者」，宜昌地区，快手平台有布局</div></div></div><div class="alert info" style="margin:16px 0 6px;"><strong>📊 竞品律所社媒布局一览</strong></div><table class="social-table"><tr><th>律所</th><th>关键IP/律师</th><th>粉丝量</th><th>直播</th><th>投放评估</th><th>投入级别</th><th>平台覆盖</th></tr><tr><td class="firm-name">湖北得伟君尚律师事务所</td><td><b>欧阳荻律师</b><br><span style="font-size:11px;color:#64748b;">武汉法律博主头部，得伟君尚/广东宝言执业</span></td><td><b>80万+</b></td><td class="live-yes">✅ 有</td><td class="budget-high">5-10万/月</td><td>高投入</td><td style="font-size:12px;">抖音 · 视频号 · 小红书</td></tr><tr><td class="firm-name">北京盈科(武汉)律师事务所</td><td><b>曹世勇律师Web3</b><br><span style="font-size:11px;color:#64748b;">Web3/区块链法律垂直赛道，元宇宙产工委常务委员</span><br><b>盈科王冲律师</b><br><span style="font-size:11px;color:#64748b;">执行法律领域，爆款「老赖配偶名下财产可以执行吗」</span></td><td><b>24万+</b></td><td class="live-no">❌ 无</td><td class="budget-medium">2-5万/月</td><td>中投入</td><td style="font-size:12px;">抖音 · 视频号</td></tr><tr><td class="firm-name">湖北今天律师事务所</td><td><b>樊辉辉律师</b><br><span style="font-size:11px;color:#64748b;">全网「辉辉律师」IP，今天律所执业律师</span></td><td><b>7万+</b></td><td class="live-no">❌ 无</td><td class="budget-low">0.5-2万/月</td><td>低投入</td><td style="font-size:12px;">抖音 · 小红书 · 知乎</td></tr><tr><td class="firm-name">北京市京师(武汉)律师事务所</td><td><span style="color:#94a3b8;">—</span></td><td><b>—</b></td><td class="live-no">❌ 无</td><td class="budget-low">0.5-1万/月</td><td>试水阶段</td><td style="font-size:12px;">抖音 · 视频号</td></tr><tr><td class="firm-name">湖北山河律师事务所</td><td><b>石磊律师/尹飞燕律师</b><br><span style="font-size:11px;color:#64748b;">参与「江汉普法」抖音号直播，线上+线下普法讲座</span></td><td><b>—</b></td><td class="live-yes">✅ 有</td><td class="budget-low">0-0.5万/月</td><td>低投入</td><td style="font-size:12px;">抖音</td></tr><tr><td class="firm-name">湖北瑞通天元律师事务所</td><td><b>唐斌律师（副主任）</b><br><span style="font-size:11px;color:#64748b;">武汉市人大代表，长江网《长江普法》栏目直播</span><br><b>姚思宇律师</b><br><span style="font-size:11px;color:#64748b;">「武汉姚思宇律师」公众号</span></td><td><b>—</b></td><td class="live-yes">✅ 有</td><td class="budget-low">0-0.5万/月</td><td>低投入</td><td style="font-size:12px;">视频号 · 公众号</td></tr><tr><td class="firm-name">湖北立丰律师事务所</td><td><b>多位律师</b><br><span style="font-size:11px;color:#64748b;">2016-2018年参与200余期节目录制，2020年「我与民法典」短视频大赛三等奖</span></td><td><b>—</b></td><td class="live-no">❌ 无</td><td class="budget-low">0-0.5万/月</td><td>低投入</td><td style="font-size:12px;">公众号 · 电视媒体</td></tr><tr><td class="firm-name">北京大成(武汉)律师事务所</td><td><b>柴欣律师</b><br><span style="font-size:11px;color:#64748b;">极目新闻特邀法律专家律师，省/市电视台特邀嘉宾律师，百度百科「柴欣律师」</span></td><td><b>—</b></td><td class="live-no">❌ 无</td><td class="budget-low">0</td><td>未布局</td><td style="font-size:12px;">未检测</td></tr><tr><td class="firm-name">湖北维思德律师事务所</td><td><span style="color:#94a3b8;">—</span></td><td><b>—</b></td><td class="live-no">❌ 无</td><td class="budget-low">0</td><td>未布局</td><td style="font-size:12px;">未检测</td></tr><tr><td class="firm-name">泰和泰(武汉)律师事务所</td><td><span style="color:#94a3b8;">—</span></td><td><b>—</b></td><td class="live-no">❌ 无</td><td class="budget-low">0</td><td>未布局</td><td style="font-size:12px;">未检测</td></tr></table><div class="alert success" style="margin:12px 0;"><strong>💡 道博社媒机会分析</strong><br>• <b>完全空白</b>（未布局社媒）: 北京大成(武汉)律师事务所, 湖北维思德律师事务所, 泰和泰(武汉)律师事务所<br>• <b>低投入/试水</b>: 湖北今天律师事务所, 北京市京师(武汉)律师事务所, 湖北山河律师事务所, 湖北瑞通天元律师事务所, 湖北立丰律师事务所<br>• <b>未开展直播</b>: 北京盈科(武汉)律师事务所, 湖北今天律师事务所, 北京市京师(武汉)律师事务所, 湖北立丰律师事务所, 北京大成(武汉)律师事务所...<br><br>📌 <b>建议</b>: 行业头部郭庆梓律师（607万粉）占据武汉法律流量绝对优势。道博可考虑差异化定位——「交通事故/人身损害」垂直赛道，在抖音+小红书+快手三平台同步运营，每周固定直播2-3场。</div><div class="alert warning" style="margin:16px 0 6px;"><strong>🔥 近2周爆款视频追踪</strong> — 近2周（7月1日-15日） | 数据来源：飞瓜数据 · 百度百科 · 抖音公开数据 · 今日头条</div><div style="font-size:12px;color:#64748b;margin:0 0 8px;">📊 共追踪到5位律师IP有爆款视频产出，其中郭庆梓律师持续霸榜抖音法律达人第1名</div><table class="viral-table"><tr><th>律师/IP</th><th>律所</th><th>平台</th><th>粉丝</th><th>视频主题</th><th>内容摘要</th><th>为什么爆了</th><th>播放/点赞</th><th>评论</th><th>转发</th><th>爆点分析</th></tr><tr><td><b>郭庆梓律师</b></td><td style="font-size:12px;">湖北尊而光律师事务所</td><td>抖音</td><td style="font-size:12px;">510.3万</td><td><b>直播切片系列（公墓评估造假/卖保健品月入百万被刑拘/追诉期争议案）</b><br><span style="font-size:11px;color:#64748b;">[刑事辩护·真实案例直播切片]</span></td><td style="font-size:12px;">以直播间真实连麦为基础，切片制作短视频。内容涉及：公墓评估造假打工人背锅、保健品销售涉刑拘、追诉期已过的死无对证案等刑事案例</td><td style="font-size:12px;">直播切片形式天然带入悬念感和戏剧冲突，郭律口头禅「让不会说的人闭麦」成个人标签，案件编号系统制造连续追更感</td><td style="font-size:12px;">👀 单条7.8万播放（百科展示数据），7月日均点赞增量6万-20万<br>👍 7月月均5.9万点赞/条</td><td style="font-size:12px;">💬 7月月均3957条评论/条</td><td style="font-size:12px;">🔄 7月月均2.7万次转发/条</td><td style="font-size:12px;">🎯 真实案例+直播互动切片，观众有参与感；标题悬念极强（如「死无对证」「追诉期早过了」）；刑事辩护角度独特，触及普通人法律盲区</td></tr><tr><td><b>欧阳荻律师</b></td><td style="font-size:12px;">湖北得伟君尚律师事务所</td><td>抖音</td><td style="font-size:12px;">80万</td><td><b>精神障碍亲属侵犯女孩 反击是否构成正当防卫</b><br><span style="font-size:11px;color:#64748b;">[刑事辩护·正当防卫边界]</span></td><td style="font-size:12px;">解析精神障碍家属侵犯女性时反击行为是否构成正当防卫，涉及防卫限度、特殊人群侵害等法律交叉问题</td><td style="font-size:12px;">题材极端且引发道德争议，正当防卫是近年社会热点（于欢案/昆山反杀案余温），精神障碍者犯罪更是法律+伦理双重焦点</td><td style="font-size:12px;">👀 —<br>👍 11.5万点赞</td><td style="font-size:12px;">💬 —</td><td style="font-size:12px;">🔄 —</td><td style="font-size:12px;">🎯 「精神障碍+侵犯女孩+正当防卫」三重标签叠加，道德冲击力极强；评论区形成「该不该反击」的两极对立讨论</td></tr><tr><td><b>欧阳荻律师</b></td><td style="font-size:12px;">湖北得伟君尚律师事务所</td><td>抖音</td><td style="font-size:12px;">80万</td><td><b>船员公海噶人 可行使船旗国管辖权</b><br><span style="font-size:11px;color:#64748b;">[海事法·刑事管辖权]</span></td><td style="font-size:12px;">解析公海犯罪适用哪国法律，讲解船旗国管辖权原则，涉及国际法与刑法的交叉适用</td><td style="font-size:12px;">「公海」「噶人」猎奇感极强，普通人对国际法/海事法完全陌生，知识差带来天然好奇心</td><td style="font-size:12px;">👀 —<br>👍 8.7万点赞</td><td style="font-size:12px;">💬 —</td><td style="font-size:12px;">🔄 —</td><td style="font-size:12px;">🎯 冷门法律领域+极端案例，满足观众的猎奇心理；评论区大量「学到了」式知识获得感反馈</td></tr><tr><td><b>邓普云律师</b></td><td style="font-size:12px;">湖北尊而光律师事务所</td><td>抖音</td><td style="font-size:12px;">34.8万</td><td><b>经济类婚姻案件系列（第三者返还/房产分割/财产转移）</b><br><span style="font-size:11px;color:#64748b;">[婚姻家事·经济纠纷]</span></td><td style="font-size:12px;">聚焦高净值婚姻中的财产分割、第三者返还、财产转移等实务问题，结合真实案例讲解维权策略</td><td style="font-size:12px;">婚姻家事是法律类短视频最大流量池；第三者返还话题天然带情绪；标的额巨大（2.5亿/3亿等案例）制造吸睛点</td><td style="font-size:12px;">👀 近30天20条新作品，新增点赞17.8万<br>👍 平均4463点赞/条</td><td style="font-size:12px;">💬 近30天新增评论1.7万条，集均评论692条</td><td style="font-size:12px;">🔄 近30天新增转发4.4万次，集均分享1520次</td><td style="font-size:12px;">🎯 「第三者」「2.5亿」「3亿」等关键词天然流量密码；每周一至周五19点固定直播培养用户习惯；评论区高频出现「我也有类似情况」的求助互动</td></tr><tr><td><b>曹世勇律师Web3</b></td><td style="font-size:12px;">北京盈科(武汉)律师事务所</td><td>抖音</td><td style="font-size:12px;">14万</td><td><b>U商线下交易被剁币反被怀疑涉嫌掩饰隐瞒罪</b><br><span style="font-size:11px;color:#64748b;">[Web3·虚拟货币·刑事风险]</span></td><td style="font-size:12px;">解析USDT线下交易中被对方「剁币」（截走虚拟货币）后，受害者反被警方怀疑涉嫌掩饰隐瞒犯罪所得罪的困境</td><td style="font-size:12px;">币圈热点持续（USDT监管趋严），U商群体是特定但高活跃度受众，「被偷了还成嫌疑人」的反差感极强</td><td style="font-size:12px;">👀 —<br>👍 —</td><td style="font-size:12px;">💬 0条（头条平台展示，抖音端数据未公开）</td><td style="font-size:12px;">🔄 —</td><td style="font-size:12px;">🎯 「受害者反成嫌疑人」的反转叙事；Web3垂直赛道受众虽窄但粘性极高；曹世勇是武汉唯一系统性做Web3法律的律师，稀缺性带来自然流量</td></tr><tr><td><b>刘丽莎律师</b></td><td style="font-size:12px;">湖南大雍律师事务所（武汉运营）</td><td>抖音</td><td style="font-size:12px;">60.7万</td><td><b>入会费2W 只为一个名额</b><br><span style="font-size:11px;color:#64748b;">[刑事辩护·诈骗案件揭秘]</span></td><td style="font-size:12px;">揭秘以高额入会费为名的诈骗案件，解析犯罪构成要件和受害者心理</td><td style="font-size:12px;">「2万入会费」引发好奇，「只为一个名额」制造稀缺感，诈骗题材是法律类高流量方向</td><td style="font-size:12px;">👀 —<br>👍 7万+点赞</td><td style="font-size:12px;">💬 集均评论102条</td><td style="font-size:12px;">🔄 集均分享628次</td><td style="font-size:12px;">🎯 金额具体（2W）增强真实感；犯罪揭秘满足窥探欲；刘丽莎武大硕士背景+刑辩女律师人设差异化明显</td></tr></table><div style="font-size:11px;color:#94a3b8;margin:4px 0 8px;">📋 说明：播放/点赞/评论数据来自飞瓜数据·百度百科·抖音公开数据，部分数据为估算值。</div>
+</div>
+
+<!-- 5. 竞品案件/开庭 -->
+<div class="section">
+    <div class="section-title">
+        🏛️ 竞品开庭与案件动态
+        <span class="badge">公开渠道</span>
+    </div>
+    <div style="background:linear-gradient(135deg,#1e3a5f,#2563eb);border-radius:12px;padding:20px;margin-bottom:16px;color:#fff;"><div style="font-size:15px;font-weight:700;margin-bottom:12px;">📊 竞品案件数据总览</div><div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:12px;"><div style="background:rgba(255,255,255,0.1);border-radius:8px;padding:10px;text-align:center;"><div style="font-size:24px;font-weight:800;color:#60a5fa;">18</div><div style="font-size:11px;color:#94a3b8;">公开案件总数</div></div><div style="background:rgba(255,255,255,0.1);border-radius:8px;padding:10px;text-align:center;"><div style="font-size:24px;font-weight:800;color:#60a5fa;">8</div><div style="font-size:11px;color:#94a3b8;">有案件记录律所</div></div><div style="background:rgba(255,255,255,0.1);border-radius:8px;padding:10px;text-align:center;"><div style="font-size:24px;font-weight:800;color:#fbbf24;">8</div><div style="font-size:11px;color:#94a3b8;">破产/清算管理人</div></div><div style="background:rgba(255,255,255,0.1);border-radius:8px;padding:10px;text-align:center;"><div style="font-size:24px;font-weight:800;color:#f87171;">4</div><div style="font-size:11px;color:#94a3b8;">刑事辩护</div></div><div style="background:rgba(rgba(255,255,255,0.1);border-radius:8px;padding:10px;text-align:center;"><div style="font-size:24px;font-weight:800;color:#34d399;">3</div><div style="font-size:11px;color:#94a3b8;">民商事诉讼</div></div><div style="background:rgba(255,255,255,0.1);border-radius:8px;padding:10px;text-align:center;"><div style="font-size:24px;font-weight:800;color:#a78bfa;">2</div><div style="font-size:11px;color:#94a3b8;">政府法律顾问</div></div></div><div style="margin-top:10px;font-size:13px;color:#bfdbfe;">🔥 <strong>热点发现</strong>：破产清算管理人业务集中度高，得伟君尚/盈科/京师/大成瓜分武汉主要破产案</div></div><div style="margin-bottom:16px;"><div style="font-size:14px;font-weight:700;color:#1e3a5f;margin-bottom:8px;">📋 案件类型分布</div><table class="hiring-table"><tr><th>案件类型</th><th>数量</th><th>占比</th></tr><tr><td class="firm-name">破产管理人/清算组</td><td><strong>8</strong></td><td><div style="background:#dbeafe;border-radius:4px;height:16px;width:44%;min-width:30px;text-align:center;font-size:11px;line-height:16px;color:#2563eb;">44.4%</div></td></tr><tr><td class="firm-name">刑事辩护</td><td><strong>4</strong></td><td><div style="background:#dbeafe;border-radius:4px;height:16px;width:22%;min-width:30px;text-align:center;font-size:11px;line-height:16px;color:#2563eb;">22.2%</div></td></tr><tr><td class="firm-name">民商事诉讼</td><td><strong>3</strong></td><td><div style="background:#dbeafe;border-radius:4px;height:16px;width:16%;min-width:30px;text-align:center;font-size:11px;line-height:16px;color:#2563eb;">16.7%</div></td></tr><tr><td class="firm-name">政府法律顾问中标</td><td><strong>2</strong></td><td><div style="background:#dbeafe;border-radius:4px;height:16px;width:11%;min-width:30px;text-align:center;font-size:11px;line-height:16px;color:#2563eb;">11.1%</div></td></tr><tr><td class="firm-name">知识产权</td><td><strong>1</strong></td><td><div style="background:#dbeafe;border-radius:4px;height:16px;width:5%;min-width:30px;text-align:center;font-size:11px;line-height:16px;color:#2563eb;">5.6%</div></td></tr></table></div><div class="alert info" style="margin:12px 0 6px;"><strong>📋 公开案件详情</strong> — 2026年1月-7月（近6个月公开案件）</div><div style="font-size:11px;color:#64748b;margin:0 0 8px;">📊 数据来源：人民法院公告网 · 全国企业破产重整案件信息网 · 企查查 · 律所官网 · 66law.cn · 搜狐 · 今日头条</div><table class="hiring-table"><tr><th>律所</th><th>案件类型</th><th>案件标题</th><th>代理律师</th><th>法院</th><th>日期</th><th>案号</th><th>来源</th></tr><tr><td class="firm-name" style="font-size:12px;">湖北得伟君尚律师事务所</td><td><span style="background:#f59e0b20;color:#f59e0b;padding:2px 8px;border-radius:4px;font-size:12px;font-weight:600;">破产管理人</span></td><td style="font-size:12px;max-width:350px;">担任武汉常和置业有限公司重整案管理人（第一次债权人会议2月11日召开）</td><td style="font-size:12px;">杨语晴</td><td style="font-size:12px;">武汉市新洲区人民法院</td><td style="font-size:12px;">2026-01-05</td><td style="font-size:11px;color:#64748b;">(2026)鄂0117破1号</td><td style="font-size:11px;color:#64748b;">人民法院公告网</td></tr><tr><td class="firm-name" style="font-size:12px;">湖北得伟君尚律师事务所</td><td><span style="background:#dc262620;color:#dc2626;padding:2px 8px;border-radius:4px;font-size:12px;font-weight:600;">刑事辩护</span></td><td style="font-size:12px;max-width:350px;">821天坚守！三人涉嫌敲诈勒索/寻衅滋事/故意毁坏财物案终获无罪判决（二审驳回抗诉维持原判）</td><td style="font-size:12px;">秦振宗、周迪、施汉锋、余学军</td><td style="font-size:12px;">武汉法院</td><td style="font-size:12px;">2026-01-07</td><td style="font-size:11px;color:#64748b;">—</td><td style="font-size:11px;color:#64748b;">得伟君尚官网</td></tr><tr><td class="firm-name" style="font-size:12px;">湖北得伟君尚律师事务所</td><td><span style="background:#2563eb20;color:#2563eb;padding:2px 8px;border-radius:4px;font-size:12px;font-weight:600;">民商事诉讼</span></td><td style="font-size:12px;max-width:350px;">中标双建村城中村改造三起诉讼律师服务（产业用地1亿+开发用地4040万+集体公房902万），中标金额49.8万</td><td style="font-size:12px;">—</td><td style="font-size:12px;">洪山区</td><td style="font-size:12px;">2026-03-02</td><td style="font-size:11px;color:#64748b;">HSHWFW202511021</td><td style="font-size:11px;color:#64748b;">洪山区公共资源交易中心</td></tr><tr><td class="firm-name" style="font-size:12px;">湖北得伟君尚律师事务所</td><td><span style="background:#8b5cf620;color:#8b5cf6;padding:2px 8px;border-radius:4px;font-size:12px;font-weight:600;">政府法律顾问</span></td><td style="font-size:12px;max-width:350px;">连续中标湖北联通/武汉市公安局东西湖区分局/湖北中烟/汉口银行/湖北省交通运输厅/武汉长江新区等6项年度法律顾问</td><td style="font-size:12px;">—</td><td style="font-size:12px;">—</td><td style="font-size:12px;">2026-04</td><td style="font-size:11px;color:#64748b;">—</td><td style="font-size:11px;color:#64748b;">企查查</td></tr><tr><td class="firm-name" style="font-size:12px;">北京盈科(武汉)律师事务所</td><td><span style="background:#f59e0b20;color:#f59e0b;padding:2px 8px;border-radius:4px;font-size:12px;font-weight:600;">破产管理人</span></td><td style="font-size:12px;max-width:350px;">担任武汉巨正软件有限公司破产清算管理人（第一次债权人会议6月30日召开）</td><td style="font-size:12px;">蓝惊涛</td><td style="font-size:12px;">武汉市中级人民法院</td><td style="font-size:12px;">2026-05-19</td><td style="font-size:11px;color:#64748b;">(2026)鄂01破18号</td><td style="font-size:11px;color:#64748b;">人民法院公告网</td></tr><tr><td class="firm-name" style="font-size:12px;">北京盈科(武汉)律师事务所</td><td><span style="background:#f59e0b20;color:#f59e0b;padding:2px 8px;border-radius:4px;font-size:12px;font-weight:600;">破产管理人</span></td><td style="font-size:12px;max-width:350px;">担任武汉市青山区汉娜艺术培训学校有限公司破产清算管理人（第一次债权人会议2月26日召开）</td><td style="font-size:12px;">晏律师、邱律师</td><td style="font-size:12px;">武汉市青山区人民法院</td><td style="font-size:12px;">2026-01-08</td><td style="font-size:11px;color:#64748b;">(2026)鄂0107破3号</td><td style="font-size:11px;color:#64748b;">人民法院公告网</td></tr><tr><td class="firm-name" style="font-size:12px;">北京盈科(武汉)律师事务所</td><td><span style="background:#f59e0b20;color:#f59e0b;padding:2px 8px;border-radius:4px;font-size:12px;font-weight:600;">破产管理人</span></td><td style="font-size:12px;max-width:350px;">担任武汉谷尚居环境艺术有限公司破产清算管理人（执行转破产程序）</td><td style="font-size:12px;">—</td><td style="font-size:12px;">武汉市东西湖区人民法院</td><td style="font-size:12px;">2026-01-16</td><td style="font-size:11px;color:#64748b;">(2026)鄂0112破8号</td><td style="font-size:11px;color:#64748b;">人民法院公告网</td></tr><tr><td class="firm-name" style="font-size:12px;">北京盈科(武汉)律师事务所</td><td><span style="background:#f59e0b20;color:#f59e0b;padding:2px 8px;border-radius:4px;font-size:12px;font-weight:600;">破产管理人</span></td><td style="font-size:12px;max-width:350px;">武汉车千线汽车科技有限公司第三次债权人会议（5项议案审议，含追收未缴出资+借款合同衍生诉讼）</td><td style="font-size:12px;">—</td><td style="font-size:12px;">武汉法院</td><td style="font-size:12px;">2026-04-15</td><td style="font-size:11px;color:#64748b;">—</td><td style="font-size:11px;color:#64748b;">搜狐</td></tr><tr><td class="firm-name" style="font-size:12px;">北京市京师(武汉)律师事务所</td><td><span style="background:#f59e0b20;color:#f59e0b;padding:2px 8px;border-radius:4px;font-size:12px;font-weight:600;">清算组</span></td><td style="font-size:12px;max-width:350px;">担任武汉市长通航道餐饮有限责任公司强制清算案清算组</td><td style="font-size:12px;">夏律师</td><td style="font-size:12px;">武汉市江岸区人民法院</td><td style="font-size:12px;">2026-02-10</td><td style="font-size:11px;color:#64748b;">(2026)鄂0102强清1号</td><td style="font-size:11px;color:#64748b;">人民法院公告网</td></tr><tr><td class="firm-name" style="font-size:12px;">北京市京师(武汉)律师事务所</td><td><span style="background:#f59e0b20;color:#f59e0b;padding:2px 8px;border-radius:4px;font-size:12px;font-weight:600;">破产管理人</span></td><td style="font-size:12px;max-width:350px;">担任星雨开之元(武汉)网络科技有限公司破产清算管理人</td><td style="font-size:12px;">刘律师</td><td style="font-size:12px;">武汉市东西湖区人民法院</td><td style="font-size:12px;">2026-02-28</td><td style="font-size:11px;color:#64748b;">—</td><td style="font-size:11px;color:#64748b;">人民法院公告网</td></tr><tr><td class="firm-name" style="font-size:12px;">北京市京师(武汉)律师事务所</td><td><span style="background:#dc262620;color:#dc2626;padding:2px 8px;border-radius:4px;font-size:12px;font-weight:600;">刑事辩护</span></td><td style="font-size:12px;max-width:350px;">成功扭转刑事案定性：过失致人死亡罪→交通肇事罪，当事人获缓刑一年</td><td style="font-size:12px;">魏齐富</td><td style="font-size:12px;">武汉法院</td><td style="font-size:12px;">2026-03-11</td><td style="font-size:11px;color:#64748b;">—</td><td style="font-size:11px;color:#64748b;">京师武汉官网</td></tr><tr><td class="firm-name" style="font-size:12px;">北京市京师(武汉)律师事务所</td><td><span style="background:#2563eb20;color:#2563eb;padding:2px 8px;border-radius:4px;font-size:12px;font-weight:600;">民商事诉讼</span></td><td style="font-size:12px;max-width:350px;">医疗纠纷案：医院篡改病历直接推定全责——激活民法典第1222条「沉睡法条」</td><td style="font-size:12px;">顾小静团队</td><td style="font-size:12px;">武汉法院</td><td style="font-size:12px;">2026-05-12</td><td style="font-size:11px;color:#64748b;">—</td><td style="font-size:11px;color:#64748b;">京师武汉官网</td></tr><tr><td class="firm-name" style="font-size:12px;">北京市京师(武汉)律师事务所</td><td><span style="background:#2563eb20;color:#2563eb;padding:2px 8px;border-radius:4px;font-size:12px;font-weight:600;">民商事诉讼</span></td><td style="font-size:12px;max-width:350px;">主播解约案：助00后新就业者打赢维权仗（合作协议纠纷）</td><td style="font-size:12px;">—</td><td style="font-size:12px;">武汉法院</td><td style="font-size:12px;">2026-03-16</td><td style="font-size:11px;color:#64748b;">—</td><td style="font-size:11px;color:#64748b;">京师武汉官网</td></tr><tr><td class="firm-name" style="font-size:12px;">北京大成(武汉)律师事务所</td><td><span style="background:#f59e0b20;color:#f59e0b;padding:2px 8px;border-radius:4px;font-size:12px;font-weight:600;">破产管理人</span></td><td style="font-size:12px;max-width:350px;">担任东方神马实业(武汉)有限公司预重整案临时管理人（2026年1月招募重整投资人）</td><td style="font-size:12px;">—</td><td style="font-size:12px;">武汉市东西湖区人民法院</td><td style="font-size:12px;">2025-12-04</td><td style="font-size:11px;color:#64748b;">(2025)鄂0112破申62号</td><td style="font-size:11px;color:#64748b;">人民法院公告网</td></tr><tr><td class="firm-name" style="font-size:12px;">北京大成(武汉)律师事务所</td><td><span style="background:#f59e0b20;color:#f59e0b;padding:2px 8px;border-radius:4px;font-size:12px;font-weight:600;">破产管理人</span></td><td style="font-size:12px;max-width:350px;">担任奥途科技(湖北)有限公司破产案管理人（债权申报5月18日）</td><td style="font-size:12px;">罗长德</td><td style="font-size:12px;">湖北省荆州市中级人民法院</td><td style="font-size:12px;">2026-04-14</td><td style="font-size:11px;color:#64748b;">(2026)鄂10破1号</td><td style="font-size:11px;color:#64748b;">人民法院公告网</td></tr><tr><td class="firm-name" style="font-size:12px;">北京大成(武汉)律师事务所</td><td><span style="background:#2563eb20;color:#2563eb;padding:2px 8px;border-radius:4px;font-size:12px;font-weight:600;">民商事诉讼</span></td><td style="font-size:12px;max-width:350px;">房屋租赁合同纠纷二审——385万争议终审胜诉（出租人未提供适租房屋）</td><td style="font-size:12px;">邓端璇</td><td style="font-size:12px;">武汉市中级人民法院</td><td style="font-size:12px;">2026-03-26</td><td style="font-size:11px;color:#64748b;">(2026)鄂01民终XXX号</td><td style="font-size:11px;color:#64748b;">北大法宝</td></tr><tr><td class="firm-name" style="font-size:12px;">湖北今天律师事务所</td><td><span style="background:#8b5cf620;color:#8b5cf6;padding:2px 8px;border-radius:4px;font-size:12px;font-weight:600;">政府法律顾问</span></td><td style="font-size:12px;max-width:350px;">受聘担任荆州市人民政府2026年度法律顾问（重大决策论证/规范性文件审查/行政复议诉讼）</td><td style="font-size:12px;">—</td><td style="font-size:12px;">—</td><td style="font-size:12px;">2026-01</td><td style="font-size:11px;color:#64748b;">—</td><td style="font-size:11px;color:#64748b;">今天律所官网</td></tr><tr><td class="firm-name" style="font-size:12px;">湖北今天律师事务所</td><td><span style="background:#05966920;color:#059669;padding:2px 8px;border-radius:4px;font-size:12px;font-weight:600;">行政诉讼</span></td><td style="font-size:12px;max-width:350px;">李某某诉某机关行政处罚及行政复议案——程序违法+证据不足，处罚与复议决定均被撤销</td><td style="font-size:12px;">阮建国</td><td style="font-size:12px;">武汉法院</td><td style="font-size:12px;">2026-02-27</td><td style="font-size:11px;color:#64748b;">—</td><td style="font-size:11px;color:#64748b;">66law.cn</td></tr><tr><td class="firm-name" style="font-size:12px;">湖北立丰律师事务所</td><td><span style="background:#dc262620;color:#dc2626;padding:2px 8px;border-radius:4px;font-size:12px;font-weight:600;">刑事辩护</span></td><td style="font-size:12px;max-width:350px;">虚开增值税普通发票案——成功辩护获不起诉决定</td><td style="font-size:12px;">张俊锋</td><td style="font-size:12px;">武汉法院</td><td style="font-size:12px;">2026-05-20</td><td style="font-size:11px;color:#64748b;">—</td><td style="font-size:11px;color:#64748b;">华律网</td></tr><tr><td class="firm-name" style="font-size:12px;">湖北立丰律师事务所</td><td><span style="background:#dc262620;color:#dc2626;padding:2px 8px;border-radius:4px;font-size:12px;font-weight:600;">刑事辩护</span></td><td style="font-size:12px;max-width:350px;">涉嫌诈骗罪——成功辩护获不起诉决定（从刑事风险中成功脱困）</td><td style="font-size:12px;">张俊锋</td><td style="font-size:12px;">麻城市人民法院</td><td style="font-size:12px;">2026-05-09</td><td style="font-size:11px;color:#64748b;">—</td><td style="font-size:11px;color:#64748b;">华律网</td></tr><tr><td class="firm-name" style="font-size:12px;">湖北山河律师事务所</td><td><span style="background:#dc262620;color:#dc2626;padding:2px 8px;border-radius:4px;font-size:12px;font-weight:600;">刑事辩护</span></td><td style="font-size:12px;max-width:350px;">朱俊律师——执业六年主办刑事案件六十余起，成功取保候审十余起，撤销案件两起</td><td style="font-size:12px;">朱俊</td><td style="font-size:12px;">武汉法院</td><td style="font-size:12px;">2026-06</td><td style="font-size:11px;color:#64748b;">—</td><td style="font-size:11px;color:#64748b;">搜狐</td></tr><tr><td class="firm-name" style="font-size:12px;">泰和泰(武汉)律师事务所</td><td><span style="background:#2563eb20;color:#2563eb;padding:2px 8px;border-radius:4px;font-size:12px;font-weight:600;">民商事诉讼</span></td><td style="font-size:12px;max-width:350px;">买卖合同纠纷——组合拳助企业追回63万拖欠货款（诉前财产保全全额冻结）</td><td style="font-size:12px;">陈思文</td><td style="font-size:12px;">武汉市洪山区人民法院</td><td style="font-size:12px;">2026-05</td><td style="font-size:11px;color:#64748b;">—</td><td style="font-size:11px;color:#64748b;">66law.cn</td></tr></table><div class="alert warning" style="margin:16px 0 6px;"><strong>🏆 竞品律所案件实力对比</strong></div><table class="hiring-table"><tr><th>律所</th><th>律师人数</th><th>代理客户</th><th>累计案件</th><th>核心专业</th><th>近期亮点</th></tr><tr><td class="firm-name">湖北得伟君尚律师事务所</td><td>239</td><td>2253</td><td>19551</td><td style="font-size:12px;">政府法律顾问/破产重整/刑事辩护</td><td style="font-size:12px;color:#1e40af;">6项政府法律顾问连续中标 + 无罪判决成功案例</td></tr><tr><td class="firm-name">北京盈科(武汉)律师事务所</td><td>—</td><td>—</td><td>—</td><td style="font-size:12px;">破产管理人/Web3法律/执行法律</td><td style="font-size:12px;color:#1e40af;">4起破产管理人业务（软件/教育/环境/汽车）</td></tr><tr><td class="firm-name">北京市京师(武汉)律师事务所</td><td>—</td><td>—</td><td>—</td><td style="font-size:12px;">刑事辩护/医疗纠纷/破产清算</td><td style="font-size:12px;color:#1e40af;">2起清算/破产管理人 + 篡改病历推定全责标杆案</td></tr><tr><td class="firm-name">北京大成(武汉)律师事务所</td><td>—</td><td>—</td><td>—</td><td style="font-size:12px;">破产重整/预重整/民商事</td><td style="font-size:12px;color:#1e40af;">2起破产管理人（东方神马预重整+奥途科技破产）</td></tr><tr><td class="firm-name">湖北今天律师事务所</td><td>—</td><td>—</td><td>—</td><td style="font-size:12px;">政府法律顾问/行政诉讼</td><td style="font-size:12px;color:#1e40af;">荆州市政府法律顾问 + 93件集体行政案件胜诉</td></tr><tr><td class="firm-name">湖北立丰律师事务所</td><td>220</td><td>—</td><td>—</td><td style="font-size:12px;">刑事辩护（专精特新认证）</td><td style="font-size:12px;color:#1e40af;">张小吉团队年均50+件刑案 + 取保不批捕率70%+，2起不起诉</td></tr><tr><td class="firm-name">湖北山河律师事务所</td><td>300</td><td>—</td><td>—</td><td style="font-size:12px;">刑事辩护/海事海商/知识产权</td><td style="font-size:12px;color:#1e40af;">受聘大韩民国驻武汉总领事馆法律顾问</td></tr><tr><td class="firm-name">泰和泰(武汉)律师事务所</td><td>—</td><td>—</td><td>—</td><td style="font-size:12px;">商业犯罪/买卖合同/婚姻家事</td><td style="font-size:12px;color:#1e40af;">陈亮律师获LegalOne实力之星（商业犯罪领域）</td></tr><tr><td class="firm-name">湖北瑞通天元律师事务所</td><td>—</td><td>—</td><td>—</td><td style="font-size:12px;">人大立法/政府顾问/交通管理</td><td style="font-size:12px;color:#1e40af;">唐斌律师（市人大代表）长江普法栏目直播</td></tr><tr><td class="firm-name">湖北维思德律师事务所</td><td>—</td><td>—</td><td>—</td><td style="font-size:12px;">未检测到公开案件</td><td style="font-size:12px;color:#1e40af;">—</td></tr></table><div class="alert success" style="margin:12px 0;"><strong>💡 道博案件机会分析</strong><br>• <b>破产管理人赛道</b>：得伟君尚/盈科/京师/大成瓜分武汉主要破产案，道博可切入中小型破产清算<br>• <b>刑事辩护</b>：立丰以「专精特新」认证建立壁垒，但市场空间大，道博可聚焦交通刑案差异化<br>• <b>政府法律顾问</b>：得伟君尚连续中标6项，壁垒较高但区级/街道级顾问存在机会<br>• <b>民商事诉讼</b>：京师武汉的篡改病历案和主播解约案值得关注——新业态纠纷是蓝海<br>• <b>建议</b>：重点关注「交通事故/人身损害」垂直领域的民商事诉讼，配合车祸监控数据精准获客</div>
+</div>
+
+<!-- 6. 武汉都市圈车祸监控 -->
+<div class="section">
+    <div class="section-title">
+        🚨 武汉都市圈48小时车祸监控
+        <span class="badge">9起</span>
+    </div>
+    <div class="alert" style="background:#f0f7ff;border-left:4px solid #3b82f6;padding:10px 14px;margin:10px 0;border-radius:6px;font-size:13px;color:#1e40af;">⏰ <b>扫描窗口</b>：近48小时全网扫描（7月13日-15日）<br>🗺️ <b>监控区域</b>：武汉都市圈（武汉14区 + 黄陂/江夏/蔡甸/新洲 + 黄冈/黄石/鄂州/咸宁等周边地市）<br>📡 <b>数据来源</b>：新闻媒体 · 抖音 · 小红书 · 微博 · 百度 · 头条 · 高德导航 · 百度地图</div><div class="alert danger"><strong>📊 48小时车祸统计</strong><br>事故总数：6起 + 路况预警：3条 | 死亡：1人 | 受伤：2人<br>涉及区域：蔡甸区、鄂州（周边地市）、青山区、黄冈（周边地市）、黄陂区<br>都市圈覆盖：东西湖、咸宁、江夏、蔡甸、鄂州、青山、黄冈、黄石、黄陂</div><div class="news-item">
+            <span class="imp-tag imp-low">⚪ 无伤亡</span>
+            <span class="cat-tag">未分类</span>
+            <span class="source-tag">新闻 · 微博 · 百度</span>
+            <span class="source-tag">武汉交通广播 · 网易</span>
+            <span class="date-tag">2026-07-15</span>
+            <div class="news-title">📍 武汉长江大桥 — 武汉长江大桥面包车超员改装被查，7座实载9人拆座椅</div>
+            <div class="news-summary">伤亡：伤亡情况待确认</div>
+            
+        </div>
+<div class="news-item">
+            <span class="imp-tag imp-low">⚪ 无伤亡</span>
+            <span class="cat-tag">酒驾事故</span>
+            <span class="source-tag">新闻 · 抖音 · 百度</span>
+            <span class="source-tag">新浪网 · 湖北交警</span>
+            <span class="date-tag">2026-07-15</span>
+            <div class="news-title">📍 武汉沙羡街 — 湖北交警酒驾曝光：武汉沙羡街陈某醉驾148mg/100ml被查</div>
+            <div class="news-summary">伤亡：伤亡情况待确认</div>
+            
+        </div>
+<div class="news-item">
+            <span class="imp-tag imp-high">🔴 死亡1人</span>
+            <span class="cat-tag">一般交通事故</span>
+            <span class="source-tag">新闻 · 抖音 · 小红书同步传播</span>
+            <span class="source-tag">武汉晚报</span>
+            <span class="date-tag">2026-07-14</span>
+            <div class="news-title">📍 黄陂区 · 目前在武汉市儿童医院 — 黄陂区武湖小学门口校车倒车撞倒两名小学生，1死1伤</div>
+            <div class="news-summary">伤亡：死亡1人，受伤1人</div>
+            <div style="margin-top:6px;font-size:12px;color:#16a34a;">🏥 新闻提及：武汉市儿童医院</div><div style="margin-top:4px;font-size:12px;color:#3b82f6;">📍 附近医院：武汉市儿童医院, 黄陂区中医医院, 黄陂区人民医院</div>
+        </div>
+<div class="news-item">
+            <span class="imp-tag imp-low">⚪ 无伤亡</span>
+            <span class="cat-tag">大货车事故</span>
+            <span class="source-tag">新闻 · 抖音 · 百度</span>
+            <span class="source-tag">极目新闻</span>
+            <span class="date-tag">2026-07-14</span>
+            <div class="news-title">📍 蔡甸区 · 国道铁炉村路段 — 蔡甸区318国道货车后厢违规载7名工人被查</div>
+            <div class="news-summary">伤亡：伤亡情况待确认</div>
+            <div style="margin-top:4px;font-size:12px;color:#3b82f6;">📍 附近医院：蔡甸区人民医院, 济和医院</div>
+        </div>
+<div class="news-item">
+            <span class="imp-tag imp-medium">🟠 路况预警</span>
+            <span class="cat-tag">未分类</span>
+            <span class="source-tag">新闻 · 微博 · 百度</span>
+            <span class="source-tag">澎湃新闻 · 湖北网络辟谣</span>
+            <span class="date-tag">2026-07-14</span>
+            <div class="news-title">📍 鄂州（周边地市） — 【辟谣】网传「鄂州龙卷风城区8人遇难」不实，警方已行政处罚造谣者</div>
+            <div class="news-summary">伤亡：路况预警/辟谣信息，非实际伤亡</div>
+            
+        </div>
+<div class="news-item">
+            <span class="imp-tag imp-medium">🟡 受伤1人</span>
+            <span class="cat-tag">电动车事故</span>
+            <span class="source-tag">头条 · 抖音 · 百度</span>
+            <span class="source-tag">逐浪新闻 · 今日头条</span>
+            <span class="date-tag">2026-07-13</span>
+            <div class="news-title">📍 武汉（具体位置待确认） — 张女士骑电动车与小轿车相撞致重型颅脑损伤，心脏骤停后抢救成功</div>
+            <div class="news-summary">伤亡：受伤1人</div>
+            
+        </div>
+<div class="news-item">
+            <span class="imp-tag imp-low">⚪ 无伤亡</span>
+            <span class="cat-tag">单方事故</span>
+            <span class="source-tag">微博 · 抖音 · 头条 · 百度</span>
+            <span class="source-tag">极目新闻 · 新浪 · 微博视频（经视直播）</span>
+            <span class="date-tag">2026-07-13</span>
+            <div class="news-title">📍 青山区 · 武汉市青山区临江大道建设一路与建设二路之间路段 — 青山区临江大道轿车侧翻，母女被困车内，检察干警徒手掰门救人</div>
+            <div class="news-summary">伤亡：车辆翻覆 · 车辆翻覆</div>
+            <div style="margin-top:4px;font-size:12px;color:#3b82f6;">📍 附近医院：武钢总医院, 武汉市普仁医院, 武汉市第九医院</div>
+        </div>
+<div class="news-item">
+            <span class="imp-tag imp-medium">🟠 路况预警</span>
+            <span class="cat-tag">未分类</span>
+            <span class="source-tag">新闻 · 高德导航 · 百度地图 · 抖音</span>
+            <span class="source-tag">湖北交警 · 中国天气网 · 湖北气象</span>
+            <span class="date-tag">2026-07-13</span>
+            <div class="news-title">📍 黄冈（周边地市） · 影响武汉都市圈多路段 — 【路况预警】台风「巴威」影响武汉都市圈多路段高速，黄陂/江夏/黄冈/黄石/鄂州/咸宁均在影响范围</div>
+            <div class="news-summary">伤亡：路况预警/辟谣信息，非实际伤亡</div>
+            
+        </div>
+<div class="news-item">
+            <span class="imp-tag imp-medium">🟠 路况预警</span>
+            <span class="cat-tag">未分类</span>
+            <span class="source-tag">新闻 · 高德导航 · 百度地图 · 微博</span>
+            <span class="source-tag">湖北发布 · 武汉气象 · 湖北日报</span>
+            <span class="date-tag">2026-07-13</span>
+            <div class="news-title">📍 黄冈（周边地市） · 车辆行驶停放均避开低洼积水路段 — 【暴雨预警】武汉暴雨红色预警，东西湖辛安渡3小时降水70mm，蔡甸大部街道50mm+</div>
+            <div class="news-summary">伤亡：路况预警/辟谣信息，非实际伤亡</div>
+            
+        </div>
+
+</div>
+
+<!-- Footer -->
+<div class="footer">
+    <p>⚖️ 湖北道博律师事务所 · 法律行业情报系统 | 自动采集+人工审核</p>
+    <p>数据来源：政府官网 · 法院公告 · 招聘平台 · 社媒平台 | 本报告仅供内部参考</p>
+    <p>生成时间：2026-07-16 09:06:48</p>
+</div>
+
+</div>
+</body>
+</html>
